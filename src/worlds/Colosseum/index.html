@@ -2,6 +2,10 @@
 <head>
   <!-- Circles' head scripts [REQUIRED] -->
   <circles-start-scripts/>
+
+  <!--other scripts-->
+  <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+
 </head>
 <body>
   <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
@@ -12,8 +16,14 @@
     <a-assets>
 
       <!--models-->
-      <a-sset-item id="coloera1" src="assets/models/colera1v1.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="coloera1" src="assets/models/colera1v3.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
       <a-asset-item id="navmesh_coloera1" src="assets/models/coloera1Nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+      <!--artifacts-->
+      <a-asset-item id="cuff" src="assets/models/cuffObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="spear" src="assets/models/spearObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="shield" src="assets/models/shieldObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="painting" src="assets/models/painting.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
       <!-- Circles' built-in assets [REQUIRED] -->
       <circles-assets/>
@@ -31,7 +41,47 @@
 
     <a-entity id="coloera1navmesh" gltf-model="#navmesh_coloera1" scale="0.5 0.5 0.5" visible='false' nav-mesh></a-entity>
 
+    <!--objects-->
+    <a-entity id="cuffObj" position="42.63 1.65 -37.66" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#cuff" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:20 0 0; inspectScale:0.6 0.6 0.6; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+    title:Handcuffs;
+    description:The Romans had various forms of shackles, such as manicae (metal handcuffs or shackles), compedes (leg irons), and vincula (general restraints). These were often used on prisoners, slaves, and gladiators, particularly those who were condemned to fight (damnati ad gladium) or executed in public spectacles.;
+    title_back:[~20-25 chars] Title Back;
+    description_back:[~240-280 chars] This is the back/secondary text that will display when you rotate the description bubble.;
+    description_offset:0 0.5 0;
+    desc_arrow_position:down;
+    label_text:Cuff;" circles-pickup-networked></a-entity>
 
+    <a-entity id="spearObj" position="35.28 1.32 -21.62" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#spear" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 
+  -1.5 0; inspectRotation:0 0 0; inspectScale:0.4 0.4 0.4; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+    title:Spear;
+    description:Spears (hastae or lanceae) were used in the Colosseum, primarily in gladiatorial combat and animal hunts (venationes). Different types of combatants and hunters wielded spears in various ways;
+    title_back:[~20-25 chars] Title Back;
+    description_back:[~240-280 chars] This is the back/secondary text that will display when you rotate the description bubble.;
+    description_offset:0 0.5 0;
+    desc_arrow_position:down;
+    label_text:Spear;" circles-pickup-networked></a-entity>
+
+    <a-entity id="shieldObj" position="45.95 1.7 13.05" rotation="0 27 0" scale="0.5 0.5 0.5" gltf-model="#shield" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 -1 0; inspectRotation:0 0 0; inspectScale:0.5 0.5 0.5; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset: 0 1.0 0.5; label_arrow_position:down;
+    title:Shield;
+    description:Various types of shields were indeed used by gladiators in the Colosseum, a crucial part of their equipment and combat style. The shields were often linked with the type of armor and weapons that were used by each particular gladiator type.;
+    title_back:[~20-25 chars] Title Back;
+    description_back:[~240-280 chars] This is the back/secondary text that will display when you rotate the description bubble.;
+    description_offset:0 0.5 0;
+    desc_arrow_position:down;
+    label_text:Shield;" circles-pickup-networked></a-entity>
+
+    <a-entity id="paintingObj" position="41.4 4.375 3.93" rotation="0 -70 0" scale="0.5 0.5 0.5" gltf-model="#painting" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:0 0 0; inspectScale:0.1 0.1 0.1; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset: 0 1.0 0.5; label_arrow_position:down;
+    title:painting;
+    description:cool painting alisha spent like 5 hours on;
+    title_back:[~20-25 chars] Title Back;
+    description_back:[~240-280 chars] This is the back/secondary text that will display when you rotate the description bubble.;
+    description_offset:0 0.5 0;
+    desc_arrow_position:down;
+    label_text:Painting;" circles-pickup-networked></a-entity>
+
+
+
+    <a-entity environment="preset:default;"></a-entity>
 
     <!-- end your code: -->
   </a-scene>
