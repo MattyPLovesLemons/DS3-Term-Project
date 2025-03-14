@@ -19,6 +19,7 @@
       <a-asset-item id="coloera1" src="assets/models/colera1v5.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
       <a-asset-item id="navmesh_coloera1" src="assets/models/coloera1Nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="detailObjects" src="assets/models/extraDetails.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="restCol" src="assets/models/restCol.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
 
       <!--artifacts-->
       <a-asset-item id="cuff" src="assets/models/cuffObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
@@ -37,7 +38,9 @@
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
 
-    
+    <!-- Spawning -->
+   
+    <a-entity circles-checkpoint circles-spawnpoint position="10 0.05 32"></a-entity>
 
     <!-- start your code: put your A-frame, Circles XR, and custom components here -->
 
@@ -48,7 +51,9 @@
 
     <a-entity id="coloera1navmesh" gltf-model="#navmesh_coloera1" scale="0.5 0.5 0.5" visible='false' nav-mesh></a-entity>
 
-    <a-entity id="sky" geometry="primitive:sphere; radius:150.0;"  material="src:#skyMap; shader:flat; flatShading:true; side:back;"></a-entity>
+    <a-entity id="sky" geometry="primitive:sphere; radius:220.0;"  material="src:#skyMap; shader:flat; flatShading:true; side:back;"></a-entity>
+
+    <a-entity id="restCol" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#restCol" shadow="cast:true; recieve:true;"></a-entity>
 
 
     <!--objects-->
