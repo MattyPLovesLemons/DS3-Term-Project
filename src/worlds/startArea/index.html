@@ -1,0 +1,70 @@
+<html>
+<head>
+  <!-- Circles' head scripts [REQUIRED] -->
+  <circles-start-scripts/>
+
+  <!--other scripts-->
+  <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+
+</head>
+<body>
+  <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
+  <circles-start-ui/>
+
+  <!-- a-scene with 'circles-properties' component [REQUIRED] -->
+  <a-scene circles_scene_properties fog="type: none">
+    <a-assets>
+
+      <!--models-->
+      <a-asset-item id="startarea" src="assets/models/startarea.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="navmesh_coloera1" src="assets/models/coloera1Nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="detailObjects" src="assets/models/extraDetails.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+      <!--artifacts-->
+      <a-asset-item id="cuff" src="assets/models/cuffObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="spear" src="assets/models/spearObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="shield" src="assets/models/shieldObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="painting" src="assets/models/painting.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+
+      <!-- HDRI -->
+      <img id='skyMap' src='assets/textures/hdri1.jpg' crossorigin="anonymous">
+
+      <!-- Circles' built-in assets [REQUIRED] -->
+      <circles-assets/>
+    </a-assets>
+
+    <!-- Circles' built-in manager and avatar [REQUIRED] -->
+    <circles-manager-avatar/>
+
+    <!-- new world -->
+    <a-entity id="link-col"
+                position="0 1 -25" rotation="0 -90 0" scale="1 1 1"
+                circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Colosseum ; link_url:/w/Colosseum"
+                shadow></a-entity>
+
+    <!-- start your code: put your A-frame, Circles XR, and custom components here -->
+
+    <!--environment-->
+    <a-entity id="startarea" position="3 -2 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#startarea" shadow="cast:true; recieve:true;"></a-entity>
+
+    
+
+    <a-entity id="sky" geometry="primitive:sphere; radius:150.0;"  material="src:#skyMap; shader:flat; flatShading:true; side:back;"></a-entity>
+
+
+    <!--objects-->
+    
+
+
+    <!--
+    <a-entity environment="preset:default;"></a-entity>
+    <a-entity environment="preset: default; fog: 0"></a-entity>
+    -->
+    <!-- end your code: -->
+  </a-scene>
+
+  <!-- Circles' end scripts [REQUIRED] -->
+  <circles-end-scripts/>
+ </body>
+</html>
