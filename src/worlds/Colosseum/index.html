@@ -12,18 +12,23 @@
   <circles-start-ui/>
 
   <!-- a-scene with 'circles-properties' component [REQUIRED] -->
-  <a-scene circles_scene_properties>
+  <a-scene circles_scene_properties fog="type: none">
     <a-assets>
 
       <!--models-->
-      <a-asset-item id="coloera1" src="assets/models/colera1v3.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="coloera1" src="assets/models/colera1v5.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
       <a-asset-item id="navmesh_coloera1" src="assets/models/coloera1Nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="detailObjects" src="assets/models/extraDetails.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
       <!--artifacts-->
       <a-asset-item id="cuff" src="assets/models/cuffObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="spear" src="assets/models/spearObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="shield" src="assets/models/shieldObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="painting" src="assets/models/painting.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+
+      <!-- HDRI -->
+      <img id='skyMap' src='assets/textures/hdri1.jpg' crossorigin="anonymous">
 
       <!-- Circles' built-in assets [REQUIRED] -->
       <circles-assets/>
@@ -37,9 +42,14 @@
     <!-- start your code: put your A-frame, Circles XR, and custom components here -->
 
     <!--environment-->
-    <a-entity id="coloera1" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#coloera1" shadow="cast:false; recieve:true;"></a-entity>
+    <a-entity id="coloera1" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#coloera1" shadow="cast:true; recieve:true;"></a-entity>
+
+    <a-entity id="detailObjects" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#detailObjects" shadow="cast:true; recieve:true;"></a-entity>
 
     <a-entity id="coloera1navmesh" gltf-model="#navmesh_coloera1" scale="0.5 0.5 0.5" visible='false' nav-mesh></a-entity>
+
+    <a-entity id="sky" geometry="primitive:sphere; radius:150.0;"  material="src:#skyMap; shader:flat; flatShading:true; side:back;"></a-entity>
+
 
     <!--objects-->
     <a-entity id="cuffObj" position="42.63 1.65 -37.66" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#cuff" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:20 0 0; inspectScale:0.6 0.6 0.6; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
@@ -80,9 +90,10 @@
     label_text:Painting;" circles-pickup-networked></a-entity>
 
 
-
+    <!--
     <a-entity environment="preset:default;"></a-entity>
-
+    <a-entity environment="preset: default; fog: 0"></a-entity>
+    -->
     <!-- end your code: -->
   </a-scene>
 
