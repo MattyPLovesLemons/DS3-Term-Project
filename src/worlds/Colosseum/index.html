@@ -5,6 +5,7 @@
 
   <!--other scripts-->
   <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
 
 </head>
 <body>
@@ -12,20 +13,26 @@
   <circles-start-ui/>
 
   <!-- a-scene with 'circles-properties' component [REQUIRED] -->
-  <a-scene circles_scene_properties fog="type: none">
+  <a-scene circles_scene_properties fog="type: none" enable-navmesh>
     <a-assets>
 
       <!--models-->
-      <a-asset-item id="coloera1" src="assets/models/colera1v5.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
-      <a-asset-item id="navmesh_coloera1" src="assets/models/coloera1Nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-      <a-asset-item id="detailObjects" src="assets/models/extraDetails.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-      <a-asset-item id="restCol" src="assets/models/restCol.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="coloera1" src="assets/models/colera1v9.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+
+      <a-asset-item id="e1tree" src="assets/models/trees2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="e1floor" src="assets/models/floorEra1.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="e1build" src="assets/models/era1Buildings.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+
+      <a-asset-item id="navmesh_coloera1" src="assets/models/navera1Final.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="detailObjects" src="assets/models/era1Objectsv3.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="restCol" src="assets/models/colera1baked.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
 
       <!--artifacts-->
       <a-asset-item id="cuff" src="assets/models/cuffObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="spear" src="assets/models/spearObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="shield" src="assets/models/shieldObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="painting" src="assets/models/painting.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="block" src="assets/models/blockfix.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
 
       <!-- HDRI -->
@@ -40,20 +47,31 @@
 
     <!-- Spawning -->
    
-    <a-entity circles-checkpoint circles-spawnpoint position="10 0.05 32"></a-entity>
+    <a-entity circles-checkpoint circles-spawnpoint position="34 0.05 28"></a-entity> <!-- old 10 , 0.05, 32-->
 
     <!-- start your code: put your A-frame, Circles XR, and custom components here -->
 
     <!--environment-->
-    <a-entity id="coloera1" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#coloera1" shadow="cast:true; recieve:true;"></a-entity>
+    <a-entity id="coloera1" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#coloera1" shadow="cast:false; recieve:true;"></a-entity>
+
+    <a-entity id="era1Floor" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#e1floor" shadow="cast:false; recieve:true;"></a-entity>
+
+    <a-entity id="era1Buildings" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#e1build" shadow="cast:false; recieve:true;"></a-entity>
+
+    <a-entity id="era1tree" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#e1tree" shadow="cast:false; recieve:true;"></a-entity>
+
+
+
 
     <a-entity id="detailObjects" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#detailObjects" shadow="cast:true; recieve:true;"></a-entity>
 
     <a-entity id="coloera1navmesh"  position="0 -1 0" scale="0.5 0.5 0.5" gltf-model="#navmesh_coloera1"  visible='false' nav-mesh></a-entity>
 
-    <a-entity id="sky" geometry="primitive:sphere; radius:220.0;"  material="src:#skyMap; shader:flat; flatShading:true; side:back;"></a-entity>
+    <a-entity id="sky" geometry="primitive:sphere; radius:350.0;"  material="src:#skyMap; shader:flat; flatShading:true; side:back;"></a-entity>
 
-    <a-entity id="restCol" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#restCol" shadow="cast:true; recieve:true;"></a-entity>
+    <a-entity id="restCol" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#restCol" shadow="cast:false; recieve:true;"></a-entity>
+
+    <a-entity id="blockwall" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#block" shadow="cast:false; recieve:true;"></a-entity>
 
 
     <!--objects-->
@@ -107,4 +125,20 @@
   <!-- Circles' end scripts [REQUIRED] -->
   <circles-end-scripts/>
  </body>
+ <script>
+  AFRAME.registerComponent('enable-navmesh', {
+    init: function () {
+      this.el.addEventListener('circles-avatar-ready', () => {
+        const player = document.querySelector('[circles-local-avatar]');
+        if (player) {
+          player.setAttribute('navmesh-constraint', {
+            navmesh: '#coloera1navmesh',
+            fall: true,
+            height: 1.6
+          });
+        }
+      });
+    }
+  });
+</script>
 </html>
