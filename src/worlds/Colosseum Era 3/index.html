@@ -17,7 +17,7 @@
     <a-assets>
 
       <!--models-->
-      <a-asset-item id="coloera1" src="assets/models/colera3TWO.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="coloera1" src="assets/models/colera3v8.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
       
       <a-asset-item id="colFpalace" src="assets/models/colera2finalPalace.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
 
@@ -27,14 +27,14 @@
 
       <a-asset-item id="colFplants" src="assets/models/colera2finalplantsv2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
 
-        <a-asset-item id="colFobjects" src="assets/models/colera2finalObjectsv3.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="colFobjects" src="assets/models/colera2finalObjectsv3.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
 
 
       <a-asset-item id="e1tree" src="assets/models/trees2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
       <a-asset-item id="e1floor" src="assets/models/floorEra1.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
       <a-asset-item id="e1build" src="assets/models/era1Buildings.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
 
-      <a-asset-item id="colera1Nav" src="assets/models/colera3navv1.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="colera1Nav" src="assets/models/colera3navv4.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="detailObjects" src="assets/models/era1Objectsv3.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="restCol" src="assets/models/colera1baked.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
 
@@ -66,7 +66,7 @@
     </a-entity>
     <!-- Spawning pad -->
    
-    <a-entity circles-checkpoint circles-spawnpoint position="0 29.75 0"></a-entity> <!-- old 10 , 0.05, 32-->
+    <a-entity circles-checkpoint circles-spawnpoint position="0 30 0"></a-entity> <!-- old 10 , 0.05, 32-->
     
     <!--teleport pads -->
     <!--entry ramp-->
@@ -76,10 +76,10 @@
  
     <!--environment-->
     <a-entity id="coloera2" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#coloera1" shadow="cast:false; recieve:true;"></a-entity>
+  
+    <a-entity id="colera1Nav"  position="0 -0.5 0" scale="0.5 0.5 0.5" gltf-model="#colera1Nav" visible='true' nav-mesh></a-entity>
 
-    <a-entity id="colera1Nav"  position="0 -0.75 0" scale="0.5 0.5 0.5" gltf-model="#colera1Nav" visible='false' nav-mesh></a-entity>
-
-    <!--
+   <!--
     <a-entity id="coloera2Palace" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFpalace" shadow="cast:false; recieve:true;"></a-entity>
 
     <a-entity id="coloera2Fort" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFfort" shadow="cast:false; recieve:true;"></a-entity>
