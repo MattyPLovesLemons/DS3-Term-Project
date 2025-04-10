@@ -34,6 +34,11 @@
       <a-asset-item id="painting" src="assets/models/painting.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="block" src="assets/models/blockfix.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
+      <!--sounds-->
+      <a-asset-item id="crowdCheer" src="assets/sounds/crowd-cheering-198411.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="horseRun" src="assets/sounds/horse-running-hq-247600.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="sword" src="assets/sounds/sword-against-sword-6341.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
 
       <!-- HDRI -->
       <img id='skyMap' src='assets/textures/hdri1.jpg' crossorigin="anonymous">
@@ -44,6 +49,13 @@
 
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
+
+
+    <!--sounds-->
+    <a-entity circles-sound="type:music; src:#crowdCheer; autoplay:true; loop:true; volume:0.1;"></a-entity>
+    <a-entity circles-sound="type:music; src:#horseRun; autoplay:true; loop:true; volume:0.1;"></a-entity>
+    <a-entity circles-sound="type:music; src:#sword; autoplay:true; loop:true; volume:0.1;"></a-entity>
+
 
     <!-- Spawning pad -->
    

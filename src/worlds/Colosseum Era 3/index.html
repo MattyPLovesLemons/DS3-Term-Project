@@ -51,6 +51,11 @@
       
       -->
 
+      <!--sounds-->
+      <a-asset-item id="crowd" src="assets/sounds/medium-crowd-murmering-6401.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="seagull" src="assets/sounds/sound-effect-seagulls-157829.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="traffic" src="assets/sounds/traffic-sound-in-city-306545.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
       <!-- HDRI -->
       <img id='skyMap' src='assets/textures/hdri1.jpg' crossorigin="anonymous">
 
@@ -61,10 +66,11 @@
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
 
-   
+    <!--sounds-->
+    <a-entity circles-sound="type:music; src:#crowd; autoplay:true; loop:true; volume:0.1;"></a-entity>
+    <a-entity circles-sound="type:music; src:#seagull; autoplay:true; loop:true; volume:0.1;"></a-entity>
+    <a-entity circles-sound="type:music; src:#traffic; autoplay:true; loop:true; volume:0.1;"></a-entity>
 
-
-    </a-entity>
     <!-- Spawning pad -->
    
     <a-entity circles-checkpoint circles-spawnpoint position="0 30 0"></a-entity> <!-- old 10 , 0.05, 32-->

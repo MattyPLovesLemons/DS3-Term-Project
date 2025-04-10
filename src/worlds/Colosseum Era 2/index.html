@@ -49,6 +49,13 @@
       
       -->
 
+      <!--sounds-->
+      <a-asset-item id="birds" src="assets/sounds/birds-chirping-75156.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="chickens" src="assets/sounds/feeding-chickens-43526.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="girl" src="assets/sounds/girlprettyvoicehumming-35489.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="talking" src="assets/sounds/people-talking-from-distant-271396.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="wind" src="assets/sounds/soft-wind-316392.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
       <!-- HDRI -->
       <img id='skyMap' src='assets/textures/hdri1.jpg' crossorigin="anonymous">
 
@@ -59,7 +66,13 @@
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
 
-    </a-entity>
+    <!--sounds-->
+    <a-entity circles-sound="type:music; src:#birds; autoplay:true; loop:true; volume:0.1;"></a-entity>
+    <a-entity circles-sound="type:music; src:#chickens; autoplay:true; loop:true; volume:0.1;"></a-entity>
+    <a-entity circles-sound="type:music; src:#girl; autoplay:true; loop:true; volume:0.1;"></a-entity>
+    <a-entity circles-sound="type:music; src:#talking; autoplay:true; loop:true; volume:0.1;"></a-entity>
+    <a-entity circles-sound="type:music; src:#wind; autoplay:true; loop:true; volume:0.1;"></a-entity>
+
     <!-- Spawning pad -->
    
     <a-entity circles-checkpoint circles-spawnpoint position="2 18.05 2.5"></a-entity> <!-- old 10 , 0.05, 32-->
