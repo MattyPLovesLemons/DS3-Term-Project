@@ -17,7 +17,18 @@
     <a-assets>
 
       <!--models-->
-      <a-asset-item id="coloera1" src="assets/models/colera2v3.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="coloera1" src="assets/models/colera2finalv2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      
+      <a-asset-item id="colFpalace" src="assets/models/colera2finalPalace.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+
+      <a-asset-item id="colFfort" src="assets/models/colera2finalFort.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+
+      <a-asset-item id="colFfloor" src="assets/models/colera2finalFloor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+
+      <a-asset-item id="colFplants" src="assets/models/colera2finalplantsv2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+
+        <a-asset-item id="colFobjects" src="assets/models/colera2finalObjectsv3.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+
 
       <a-asset-item id="e1tree" src="assets/models/trees2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
       <a-asset-item id="e1floor" src="assets/models/floorEra1.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
@@ -49,15 +60,19 @@
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
 
+   
+
+
+    </a-entity>
     <!-- Spawning pad -->
    
-    <a-entity circles-checkpoint circles-spawnpoint position="0 18.05 2"></a-entity> <!-- old 10 , 0.05, 32-->
+    <a-entity circles-checkpoint circles-spawnpoint position="2 18.05 2.5"></a-entity> <!-- old 10 , 0.05, 32-->
     
     <!--teleport pads -->
     <!--entry ramp-->
-    <a-entity circles-checkpoint position="-3.5 18.05 -9"></a-entity>
-    <a-entity circles-checkpoint position="0 18.05 -3.5"></a-entity>
-    <a-entity circles-checkpoint position="2 18.05 2.5"></a-entity>
+    <a-entity circles-checkpoint position="-3.5 8.05 -9"></a-entity>
+    <a-entity circles-checkpoint position="-0.8 14.05 -3.5"></a-entity>
+    <a-entity circles-checkpoint position="1 18.05 1"></a-entity>
 
     <!--first criss-cross-->
     <a-entity circles-checkpoint position="9.5 18.05 -1.5"></a-entity>
@@ -90,35 +105,44 @@
     <a-entity circles-checkpoint position="35 18.05 -54.5"></a-entity>
     <a-entity circles-checkpoint position="23.5 18.05 -57.5"></a-entity>
     <a-entity circles-checkpoint position="20 18.05 -65.5"></a-entity>
-    <a-entity circles-checkpoint position="9 18.05 -55"></a-entity>
-    <a-entity circles-checkpoint position="10.5 18.05 -62"></a-entity>
-    <a-entity circles-checkpoint position="9.5 18.05 -70"></a-entity>
+    <a-entity circles-checkpoint position="9 17.55 -55"></a-entity>
+    <a-entity circles-checkpoint position="10.5 17.55 -62"></a-entity>
+    <a-entity circles-checkpoint position="9.5 17.55 -70"></a-entity>
 
     <!--second hallway-->
-    <a-entity circles-checkpoint position="8 18.05 -77.5"></a-entity>
-    <a-entity circles-checkpoint position="7.5 18.05 -90"></a-entity>
-    <a-entity circles-checkpoint position="17 18.05 -91.5"></a-entity>
+    <a-entity circles-checkpoint position="8 17.75 -77.5"></a-entity>
+    <a-entity circles-checkpoint position="7.5 17.75 -90"></a-entity>
+    <a-entity circles-checkpoint position="17 17.75 -91.5"></a-entity>
     <a-entity circles-checkpoint position="20.5 18.05 -87.5"></a-entity>
 
     <!--upper ramp-->
-    <a-entity circles-checkpoint position="30.5 18.05 -90"></a-entity>
-    <a-entity circles-checkpoint position="38.5 18.05 -93"></a-entity>
-    <a-entity circles-checkpoint position="44 18.05 -94.5"></a-entity>
+    <a-entity circles-checkpoint position="30.5 18.55 -90"></a-entity>
+    <a-entity circles-checkpoint position="38.5 26.05 -93"></a-entity>
+    <a-entity circles-checkpoint position="44 29.65 -94.5"></a-entity>
 
     <!--upper hallway-->
-    <a-entity circles-checkpoint position="50 18.05 -82.5"></a-entity>
-    <a-entity circles-checkpoint position="49 18.05 -90"></a-entity>
-    <a-entity circles-checkpoint position="47 18.05 -98.5"></a-entity>
-    <a-entity circles-checkpoint position="43.5 18.05 -106"></a-entity>
+    <a-entity circles-checkpoint position="50 29.65 -82.5"></a-entity>
+    <a-entity circles-checkpoint position="49 29.65 -90"></a-entity>
+    <a-entity circles-checkpoint position="47 29.65 -98.5"></a-entity>
+    <a-entity circles-checkpoint position="43.5 29.95 -106"></a-entity>
     
     <!-- start your code: put your A-frame, Circles XR, and custom components here -->
  
     <!--environment-->
     <a-entity id="coloera2" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#coloera1" shadow="cast:false; recieve:true;"></a-entity>
 
-    <a-entity id="colera1Nav"  position="0 -1.0 0" scale="0.5 0.5 0.5" gltf-model="#colera1Nav" visible='true' nav-mesh></a-entity>
+    <a-entity id="colera1Nav"  position="0 -0.75 0" scale="0.5 0.5 0.5" gltf-model="#colera1Nav" visible='false' nav-mesh></a-entity>
 
+    <a-entity id="coloera2Palace" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFpalace" shadow="cast:false; recieve:true;"></a-entity>
 
+    <a-entity id="coloera2Fort" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFfort" shadow="cast:false; recieve:true;"></a-entity>
+
+    <a-entity id="coloera2Floor" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFfloor" shadow="cast:false; recieve:true;"></a-entity>
+
+    <a-entity id="colera2Plants" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFplants" shadow="cast:false; recieve:true;"></a-entity>
+
+    <a-entity id="colera2Objects" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFobjects" shadow="cast:false; recieve:true;"></a-entity>
+    
     
 
     
@@ -201,7 +225,7 @@
           player.setAttribute('navmesh-constraint', {
             navmesh: '#colera1Nav',
             fall: true,
-            height: 1.6
+            height: 2.0
           });
         }
       });
