@@ -17,7 +17,7 @@
     <a-assets>
 
       <!--models-->
-      <a-asset-item id="coloera1" src="assets/models/colera3v8.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="coloera1" src="assets/models/colera3v9.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
       
       <a-asset-item id="colFpalace" src="assets/models/colera2finalPalace.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
 
@@ -29,6 +29,7 @@
 
       <a-asset-item id="colFobjects" src="assets/models/colera2finalObjectsv3.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
 
+        <a-asset-item id="colPods" src="assets/models/colera3Pods.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
 
       <a-asset-item id="e1tree" src="assets/models/trees2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
       <a-asset-item id="e1floor" src="assets/models/floorEra1.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
@@ -77,8 +78,10 @@
     <!--environment-->
     <a-entity id="coloera2" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#coloera1" shadow="cast:false; recieve:true;"></a-entity>
   
-    <a-entity id="colera1Nav"  position="0 -0.5 0" scale="0.5 0.5 0.5" gltf-model="#colera1Nav" visible='true' nav-mesh></a-entity>
+    <a-entity id="colera1Nav"  position="0 -0.75 0" scale="0.5 0.5 0.5" gltf-model="#colera1Nav" visible='false' nav-mesh></a-entity>
 
+    <a-entity id="colPods" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colPods" shadow="cast:false; recieve:true;"></a-entity>
+    
    <!--
     <a-entity id="coloera2Palace" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFpalace" shadow="cast:false; recieve:true;"></a-entity>
 
