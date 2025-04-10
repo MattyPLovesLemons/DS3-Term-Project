@@ -141,7 +141,7 @@
 
     <a-entity id="colera2Plants" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFplants" shadow="cast:false; recieve:true;"></a-entity>
 
-    <a-entity id="colera2Objects" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFobjects" shadow="cast:false; recieve:true;"></a-entity>
+    <a-entity id="colera2Objects" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFobjects" shadow="cast:false; recieve:false;" material="shader: flat;"></a-entity>
     
     
 
@@ -149,8 +149,8 @@
 
     <a-entity id="sky" geometry="primitive:sphere; radius:350.0;"  material="src:#skyMap; shader:flat; flatShading:true; side:back;"></a-entity>
 
-   
-
+    <a-entity light="type: ambient; color: #dec07a" intensity="0.3"></a-entity>
+    <a-light type="directional" color="#dec07a" intensity="1" position="-1 1 1"></a-light>
     
 
     <!-- dont use
