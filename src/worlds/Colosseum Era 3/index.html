@@ -17,27 +17,14 @@
     <a-assets>
 
       <!--models-->
-      <a-asset-item id="coloera1" src="assets/models/colera3v9.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
-      
-      <a-asset-item id="colFpalace" src="assets/models/colera2finalPalace.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="coloera1" src="assets/models/era3COL.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+    
+      <a-asset-item id="background" src="assets/models/era3BAC.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
 
-      <a-asset-item id="colFfort" src="assets/models/colera2finalFort.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
-
-      <a-asset-item id="colFfloor" src="assets/models/colera2finalFloor.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
-
-      <a-asset-item id="colFplants" src="assets/models/colera2finalplantsv2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
-
-      <a-asset-item id="colFobjects" src="assets/models/colera2finalObjectsv3.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
-
-        <a-asset-item id="colPods" src="assets/models/colera3Pods.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
-
-      <a-asset-item id="e1tree" src="assets/models/trees2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
-      <a-asset-item id="e1floor" src="assets/models/floorEra1.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
-      <a-asset-item id="e1build" src="assets/models/era1Buildings.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
-
-      <a-asset-item id="colera1Nav" src="assets/models/colera3navv4.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-      <a-asset-item id="detailObjects" src="assets/models/era1Objectsv3.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-      <a-asset-item id="restCol" src="assets/models/colera1baked.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="colPods" src="assets/models/era3POD.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+     
+      <a-asset-item id="Nav" src="assets/models/era3NAV.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+    
 
       <!--artifacts-->
       <a-asset-item id="Ecoin" src="assets/models/E3coin.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
@@ -57,7 +44,7 @@
       <a-asset-item id="traffic" src="assets/sounds/traffic-sound-in-city-306545.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
       <!-- HDRI -->
-      <img id='skyMap' src='assets/textures/hdri1.jpg' crossorigin="anonymous">
+      <img id='skyMap' src='assets/textures/hdri3.jpg' crossorigin="anonymous">
 
       <!-- Circles' built-in assets [REQUIRED] -->
       <circles-assets/>
@@ -68,7 +55,7 @@
 
     <!--sounds-->
     <a-entity circles-sound="type:music; src:#crowd; autoplay:true; loop:true; volume:0.1;"></a-entity>
-    <a-entity circles-sound="type:music; src:#seagull; autoplay:true; loop:true; volume:0.1;"></a-entity>
+    <!--<a-entity circles-sound="type:music; src:#seagull; autoplay:true; loop:true; volume:0.1;"></a-entity>-->
     <a-entity circles-sound="type:music; src:#traffic; autoplay:true; loop:true; volume:0.1;"></a-entity>
 
     <!-- Spawning pad -->
@@ -80,52 +67,60 @@
     <a-entity circles-checkpoint position="-2 30 -1.5"></a-entity>
     <a-entity circles-checkpoint position="-7.5 30 -4.5"></a-entity>
     <a-entity circles-checkpoint position="-14.5 30 -8.5"></a-entity>
-    <a-entity circles-checkpoint position="-18.5 30 -12.5"></a-entity>
-    <a-entity circles-checkpoint position="-21.5 30 -10"></a-entity>
-    <a-entity circles-checkpoint position="-22.5 30 -14"></a-entity>
+    <a-entity circles-checkpoint position="-18.5 31.3 -12.5"></a-entity> 
+    <a-entity circles-checkpoint position="-21.5 30 -10"></a-entity> <!-- ramp-->
+    <a-entity circles-checkpoint position="-22.5 31.3 -14"></a-entity>
     <a-entity circles-checkpoint position="-27 30 -15"></a-entity>
     <a-entity circles-checkpoint position="-60 30 -13"></a-entity>
 
     <!--second floor-->
-    <a-entity circles-checkpoint position="5 30 -8.5"></a-entity>
-    <a-entity circles-checkpoint position="0 30 0"></a-entity>
-    <a-entity circles-checkpoint position="-1.5 30 -13"></a-entity>
-    <a-entity circles-checkpoint position="7 30 -4.5"></a-entity>
-    <a-entity circles-checkpoint position="-10 30 -18"></a-entity>
-    <a-entity circles-checkpoint position="-30 30 -8.5"></a-entity>
-    <a-entity circles-checkpoint position="-19 30 -20"></a-entity>
-    <a-entity circles-checkpoint position="-22.5 30 -12"></a-entity>
-    <a-entity circles-checkpoint position="-27 30 -24"></a-entity>
-    <a-entity circles-checkpoint position="-30 30 -15"></a-entity>
-    <a-entity circles-checkpoint position="-35 30 -25"></a-entity>
-    <a-entity circles-checkpoint position="-37 30 -17"></a-entity>
-    <a-entity circles-checkpoint position="-45.5 30 -18.5"></a-entity>
-    <a-entity circles-checkpoint position="-52 30 -28.5"></a-entity>
-    <a-entity circles-checkpoint position="-53 30 -19.5"></a-entity>
-    <a-entity circles-checkpoint position="-61 30 -30"></a-entity>
-    <a-entity circles-checkpoint position="-61.5 30 -20.5"></a-entity>
-    <a-entity circles-checkpoint position="-70.5 30 -29.5"></a-entity>
-    <a-entity circles-checkpoint position="-70 30 -21"></a-entity>
+    
+   
+    <a-entity circles-checkpoint position="-7 36.5 -4.5"></a-entity>
+    <a-entity circles-checkpoint position="-10 36.5 -18"></a-entity>
+    <a-entity circles-checkpoint position="-30 36.5 -8.5"></a-entity>
+    <a-entity circles-checkpoint position="-19 36.5 -20"></a-entity> <!-- rampTop-->
+    <a-entity circles-checkpoint position="-22.5 36.5 -12"></a-entity>
+    <a-entity circles-checkpoint position="-27 36.5 -24"></a-entity>
+    <a-entity circles-checkpoint position="-30 36.5 -15"></a-entity>
+    <a-entity circles-checkpoint position="-35 36.5 -25"></a-entity>
+    <a-entity circles-checkpoint position="-37 36.5 -17"></a-entity>
+    <a-entity circles-checkpoint position="-45.5 36.5 -18.5"></a-entity>
+    <a-entity circles-checkpoint position="-52 36.5 -28.5"></a-entity>
+    <a-entity circles-checkpoint position="-53 36.5 -19.5"></a-entity>
+    <a-entity circles-checkpoint position="-61 36.5 -30"></a-entity>
+    <a-entity circles-checkpoint position="-61.5 36.5 -20.5"></a-entity>
+    <a-entity circles-checkpoint position="-70.5 36.5 -29.5"></a-entity>
+    <a-entity circles-checkpoint position="-70 36.5 -21"></a-entity>
 
     <!--ramp-->
-    <a-entity circles-checkpoint position="-43 30 -27.5"></a-entity>
-    <a-entity circles-checkpoint position="-52.5 30 -29"></a-entity>
-    <a-entity circles-checkpoint position="-65.5 30 -29"></a-entity>
+    <a-entity circles-checkpoint position="-43 38.4 -27.5"></a-entity>
+    <a-entity circles-checkpoint position="-52.5 46 -29"></a-entity>
+    <a-entity circles-checkpoint position="-65.5 56 -29"></a-entity>
 
     <!--top hall-->
-    <a-entity circles-checkpoint position="-77.5 30 -29.5"></a-entity>
-    <a-entity circles-checkpoint position="-87.5 30 -29.5"></a-entity>
-    <a-entity circles-checkpoint position="-97.5 30 -28"></a-entity>
-    <a-entity circles-checkpoint position="-107.5 30 -26"></a-entity>
+    <a-entity circles-checkpoint position="-77.5 56 -29.5"></a-entity>
+    <a-entity circles-checkpoint position="-87.5 56 -29.5"></a-entity>
+    <a-entity circles-checkpoint position="-97.5 56 -28"></a-entity>
+    <a-entity circles-checkpoint position="-107.5 56 -26"></a-entity>
     
+
+    <a-entity id="link-col"
+    position="2 31 2.5" rotation="0 130 0" scale="1 1 1"
+    circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Back to Era 2 ; link_url:/w/Colosseum Era 2"
+    shadow></a-entity>
+
+
     <!-- start your code: put your A-frame, Circles XR, and custom components here -->
  
     <!--environment-->
     <a-entity id="coloera2" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#coloera1" shadow="cast:false; recieve:true;"></a-entity>
   
-    <a-entity id="colera1Nav"  position="0 -0.75 0" scale="0.5 0.5 0.5" gltf-model="#colera1Nav" visible='false' nav-mesh></a-entity>
+    <a-entity id="Nav1"  position="0 -0.75 0" scale="0.5 0.5 0.5" gltf-model="#Nav" visible='false' nav-mesh></a-entity>
 
-    <a-entity id="colPods" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colPods" shadow="cast:false; recieve:true;"></a-entity>
+    <a-entity id="colPods" position="0 -1.3 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colPods" shadow="cast:false; recieve:true;"></a-entity>
+    
+    <a-entity id="background" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#background" shadow="cast:false; recieve:true;"></a-entity>
     
    <!--
     <a-entity id="coloera2Palace" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#colFpalace" shadow="cast:false; recieve:true;"></a-entity>
@@ -142,7 +137,12 @@
 
     
 
-    <a-entity id="sky" geometry="primitive:sphere; radius:350.0;"  material="src:#skyMap; shader:flat; flatShading:true; side:back;"></a-entity>
+    <a-entity id="sky" geometry="primitive:sphere; radius:550.0; rotation:0 90 0"  material="src:#skyMap; shader:flat; flatShading:true; side:back;"></a-entity>
+
+    <a-entity light="type: ambient; color: #70748d" intensity="0.4"></a-entity>
+    <a-light type="directional" color="#70748d" intensity="0.5" position="-1 1 1"></a-light>
+
+
     <!--
     <a-entity light="type: ambient; color: #dec07a" intensity="0.3"></a-entity>
     <a-light type="directional" color="#dec07a" intensity="1" position="-1 1 1"></a-light>
@@ -162,19 +162,46 @@
 
     <!--objects-->
     <a-entity id="coin" position="-5.2 38.4 -17.2" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#Ecoin" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:20 0 0; inspectScale:0.6 0.6 0.6; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
-    title:coin;
-    description:mony :>;" circles-pickup-networked></a-entity>  
-    <a-entity id="dice" position="-65 39 -31.5" rotation="0 0 -65" scale="0.5 0.5 0.5" gltf-model="#Edice" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:20 0 0; inspectScale:0.6 0.6 0.6; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+    title:Roman Coins;
+    description: In ancient times, emperors minted coins depicting the Colosseum to show off their power. Today, coins serve as reminders of empire, propaganda, and cultural legacy.;
+    label_text:Coins;" circles-pickup-networked></a-entity>  
+    <a-entity id="dice" position="-65 38 -31.5" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#Edice" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:20 0 0; inspectScale:0.6 0.6 0.6; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
     title:dice;
-    description:1-6;" circles-pickup-networked></a-entity>
+    description: Dice were common in ancient Rome for gambling and games, even gladiators might have been bet on with dice. Today, dice still symbolize chance and unpredictability.;
+    title_back: Tourist Metaphor;
+    description_back: Standing in the Colosseum today, dice can represent how life and death were once determined by entertainment, fate, and imperial whim, a sobering reminder for visitors; 
+    description_offset:0 0.5 0;
+    desc_arrow_position:down;
+    label_text:Painting;" circles-pickup-networked></a-entity>
     <a-entity id="spoon" position="-76 58 -32" rotation="0 0 -41" scale="0.5 0.5 0.5" gltf-model="#Espoon" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:20 0 0; inspectScale:0.6 0.6 0.6; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
-    title:spoon;
-    description:for soup;" circles-pickup-networked></a-entity>
-    <a-entity id="painting" position="-90 60.4 -32.5" rotation="0 0 2" scale="0.5 0.5 0.5" gltf-model="#Epainting3" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:20 0 0; inspectScale:0.6 0.6 0.6; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
-    title:ANOTHER PAINTING;
-    description:more;" circles-pickup-networked></a-entity> 
+    title:Spoon;
+    description: Spoons, especially decorative ones with images of the Colosseum, are popular as collectible souvenirs. They're a way people take a little piece of Rome back home;
+    title_back: Common Humanity;
+    description_back: The spoon, as a basic tool for eating, contrasts with the Colosseum’s history of excess, violence, and spectacle. It reminds us of daily life, simplicity, and the value of every individual, not just the elites or warriors.; 
+    description_offset:0 0.5 0;
+    desc_arrow_position:down;
+    label_text:Painting;" circles-pickup-networked></a-entity>
+    <a-entity id="painting" position="-90 60.4 -32.5" rotation="0 0 2" scale="0.5 0.5 0.5" gltf-model="#Epainting3" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:20 0 0; inspectScale:0.1 0.1 0.1; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 -2.0 0.0; label_arrow_position:down;
+    title:The Colosseum;
+    description: This painting, from the 17th-century captures the Colosseum as it stood in its prime, complete, majestic and central to Roman life. Once the heart of imperial spectacle, the arena later weathered centuries of change, serving as a fortress and shelter in medieval times. ;
+    title_back:The Colosseum;
+    description_back: Today, it remains a powerful part of Rome's enduring legacy, bridging ancient glory with the living city around it.; 
+    description_offset:0 0.5 0;
+    desc_arrow_position:down;
+    label_text:Painting;" circles-pickup-networked></a-entity> 
 
 
+    <a-entity id="Title" position="-4 32.4 -4" rotation="0 40 0" text="value:  Present-Day Rome
+    ; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="-4 31.3 -4" rotation="0 40 0" text="value: Present-Day Rome emerged as a focal point of the Renaissance in the 15th century, revitalizing its ancient heritage with art, architecture, and intellectual achievements. The city transformed once more, becoming the capital of modern Italy in 1871. Today, Rome is a vibrant metropolis that blends its ancient ruins, medieval history, and Renaissance splendor with contemporary life, attracting millions of visitors and serving as a global center for art, politics, and religion.    ; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+    
+    <a-entity id="Title" position="-1.7 2 -24" rotation="0 25 0" text="value:   ; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="-1.7 1.3 -24" rotation="0 25 0" text="value:    ; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+    
+    <a-entity id="Title" position="-107 58 -26" rotation="0 90 0" text="value: The End! ; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="-107 57.3 -26" rotation="0 90 0" text="value: Thank you for exploring our experience! We hope you had fun and learned something new!   ; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+    
+    
     <!--
     <a-entity environment="preset:default;"></a-entity>
     <a-entity environment="preset: default; fog: 0"></a-entity>
