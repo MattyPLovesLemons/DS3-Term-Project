@@ -34,11 +34,6 @@
       <a-asset-item id="painting" src="assets/models/painting.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="block" src="assets/models/blockfix.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
-      <!--sounds-->
-      <a-asset-item id="crowdCheer" src="assets/sounds/crowd-cheering-198411.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-      <a-asset-item id="horseRun" src="assets/sounds/horse-running-hq-247600.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-      <a-asset-item id="sword" src="assets/sounds/sword-against-sword-6341.mp3" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-
 
       <!-- HDRI -->
       <img id='skyMap' src='assets/textures/hdri1.jpg' crossorigin="anonymous">
@@ -50,16 +45,9 @@
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
 
-
-    <!--sounds-->
-    <a-entity circles-sound="type:music; src:#crowdCheer; autoplay:true; loop:true; volume:0.1;"></a-entity>
-    <a-entity circles-sound="type:music; src:#horseRun; autoplay:true; loop:true; volume:0.1;"></a-entity>
-    <a-entity circles-sound="type:music; src:#sword; autoplay:true; loop:true; volume:0.1;"></a-entity>
-
-
     <!-- Spawning pad -->
    
-    <a-entity circles-checkpoint circles-spawnpoint position="37 0.05 28"></a-entity> <!-- old 10 , 0.05, 32-->
+    <a-entity circles-checkpoint circles-spawnpoint position="37 0.05 28" rotation="0 90 0"></a-entity> <!-- old 10 , 0.05, 32-->
 
     <!--teleport pads -->
     <!--outer ring-->
@@ -93,10 +81,10 @@
     <a-entity circles-checkpoint position="48.5 0.05 -38.5"></a-entity>
 
     <!--outside ring-->
-    <a-entity circles-checkpoint position="26 0.05 -35"></a-entity>
-    <a-entity circles-checkpoint position="32.5 0.05 -39.5"></a-entity>
-    <a-entity circles-checkpoint position="38.5 0.05 -43"></a-entity>
-    <a-entity circles-checkpoint position="44 0.05 -46"></a-entity>
+    <a-entity circles-checkpoint position="26 1.85 -35"></a-entity>
+    <a-entity circles-checkpoint position="32.5 1.85 -39.5"></a-entity>
+    <a-entity circles-checkpoint position="38.5 1.85 -43"></a-entity>
+    <a-entity circles-checkpoint position="44 1.85 -46"></a-entity>
 
     <!--hallway 1-->
     <a-entity circles-checkpoint position="40 0.05 7.5"></a-entity>
@@ -114,13 +102,20 @@
 
     <!--ramp 2-->
     <a-entity circles-checkpoint position="56 4 -13"></a-entity>
-    <a-entity circles-checkpoint position="58.5 8 -8"></a-entity>
+    <a-entity circles-checkpoint position="58.5 7.9 -8"></a-entity>
 
     <!--front hallways-->
     <a-entity circles-checkpoint position="30.5 0.05 -21.5"></a-entity>
     <a-entity circles-checkpoint position="37 0.05 -23"></a-entity>
     <a-entity circles-checkpoint position="48 0.05 -28.5"></a-entity>
     <a-entity circles-checkpoint position="53.5 0.05 -30.5"></a-entity>
+
+
+    <a-entity id="link-col"
+                position="59 9 -6.5" rotation="0 90 0" scale="1 1 1"
+                circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Era 2 - Medivial Times ; link_url:/w/Colosseum Era 2"
+                shadow></a-entity>
+
 
     <!-- start your code: put your A-frame, Circles XR, and custom components here -->
 
@@ -146,13 +141,38 @@
 
     <a-entity id="blockwall" position="0 -1 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#block" shadow="cast:false; recieve:true;"></a-entity>
 
+    <a-entity id="Title1" position="55 2 -20" rotation="0 240 0" text="value: Move on to the Next Era; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="55 1.3 -20" rotation="0 240 0" text="value: Up Above will teleport you to an era long past the golden days of the Roman Era; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+
+    <a-entity id="Title" position="-1.7 2 -24" rotation="0 25 0" text="value:   ; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="-1.7 1.3 -24" rotation="0 25 0" text="value:    ; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+    <!--
+    <a-entity id="Title" position="-1.7 2 -24" rotation="0 25 0" text="value:   ; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="-1.7 1.3 -24" rotation="0 25 0" text="value:    ; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+    -->
+
+    <a-entity id="Title" position="44 2 11" rotation="0 -70 0" text="value: Look at Paintings ; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="44 1.3 11" rotation="0 -70 0" text="value: There will be paintings across the eras of contemporary paintings done on the Colosseum and Rome to get a better context of Rome and the Era from a more modern lense   ; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+   
+    <a-entity id="Title" position="42 2.5 28" rotation="0 -110 0" text="value: Imperial Rome (27 BCE – 476 CE)  ; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="42 1.3 28" rotation="0 -110 0" text="value: The rise of Imperial Rome marked the transformation from a republic to an empire under Augustus in 27 BCE. This era saw Rome expand its borders across Europe, the Middle East, and North Africa, becoming one of the most powerful and influential civilizations in history. The Colosseum, built during this time, epitomized Roman grandeur, hosting public spectacles, gladiator games, and imperial celebrations that reinforced the might and cultural achievements of the empire   ; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+   
+    <a-entity id="Title" position="64 2 24" rotation="0 200 0" text="value: Ahead - Ludus Magnus ; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="64 1.3 24" rotation="0 200 0" text="value: Located just east of the Colosseum, the Ludus Magnus was the largest of Rome’s gladiator schools. Connected to the amphitheater by an underground passage, it served as both a training ground and living quarters for gladiators.   ; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+    
+    <a-entity id="Title" position="73 2 19" rotation="0 200 0" text="value: Far Left -   Domus Aurea (Nero’s Golden House)   ; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="73 1.1 19" rotation="0 200 0" text="value: Before the Colosseum stood here, Emperor Nero’s lavish palace complex sprawled across the land. Its opulence symbolized excess, and its demolition paved the way for public structures like the Colosseum, an attempt to return Rome to the people.   ; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+    
+    <a-entity id="Title" position="28 4 -40" rotation="0 0 0" text="value: Velarium Awnings ; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="28 3.3 -40d" rotation="0 0 0" text="value: A vast system of retractable awnings stretched over the Colosseum, shielding up to 50,000 spectators from the sun. Operated by Roman sailors, this engineering marvel showcased the Empire’s mastery of both architecture and naval logistics.  ; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+    
 
     <!--objects-->
-    <a-entity id="cuffObj" position="42.63 1.65 -37.66" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#cuff" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:20 0 0; inspectScale:0.6 0.6 0.6; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+    <a-entity id="cuffObj" position="42.63 0.8 -37.66" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#cuff" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:20 0 0; inspectScale:0.6 0.6 0.6; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
     title:Handcuffs;
-    description:The Romans had various forms of shackles, such as manicae (metal handcuffs or shackles), compedes (leg irons), and vincula (general restraints). These were often used on prisoners, slaves, and gladiators, particularly those who were condemned to fight (damnati ad gladium) or executed in public spectacles.;
-    title_back:[~20-25 chars] Title Back;
-    description_back:[~240-280 chars] This is the back/secondary text that will display when you rotate the description bubble.;
+    description:The Romans had various forms of shackles, such as manicae (metal handcuffs or shackles), compedes (leg irons), and vincula (general restraints). Cont. on rotate;
+    title_back:Handcuffs pt.2;
+    description_back: These were often used on prisoners, slaves, and gladiators, particularly those who were condemned to fight (damnati ad gladium) or executed in public spectacles.;
     description_offset:0 0.5 0;
     desc_arrow_position:down;
     label_text:Cuff;" circles-pickup-networked></a-entity>
@@ -161,26 +181,28 @@
   -1.5 0; inspectRotation:0 0 0; inspectScale:0.4 0.4 0.4; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
     title:Spear;
     description:Spears (hastae or lanceae) were used in the Colosseum, primarily in gladiatorial combat and animal hunts (venationes). Different types of combatants and hunters wielded spears in various ways;
-    title_back:[~20-25 chars] Title Back;
-    description_back:[~240-280 chars] This is the back/secondary text that will display when you rotate the description bubble.;
+    title_back: s;
+    description_back: ;
     description_offset:0 0.5 0;
     desc_arrow_position:down;
     label_text:Spear;" circles-pickup-networked></a-entity>
 
-    <a-entity id="shieldObj" position="45.95 1.7 13.05" rotation="0 27 0" scale="0.5 0.5 0.5" gltf-model="#shield" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 -1 0; inspectRotation:0 0 0; inspectScale:0.5 0.5 0.5; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset: 0 1.0 0.5; label_arrow_position:down;
+    <a-entity id="shieldObj" position="45.95 1.7 13.05" rotation="0 27 0" scale="0.5 0.5 0.5" gltf-model="#shield" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 -1 0; inspectRotation:0 0 0; inspectScale:0.4 0.4 0.4; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset: 0 1.0 0.5; label_arrow_position:down;
     title:Shield;
     description:Various types of shields were indeed used by gladiators in the Colosseum, a crucial part of their equipment and combat style. The shields were often linked with the type of armor and weapons that were used by each particular gladiator type.;
-    title_back:[~20-25 chars] Title Back;
-    description_back:[~240-280 chars] This is the back/secondary text that will display when you rotate the description bubble.;
+    title_back: Types of Shields;
+    description_back: 1 - Rectangular Shield (Scutum) The Samnite gladiator was known to carry this, sometimes referred to as a scutum. 
+    2-  Small, Round Shields,gladiators like the Hoplomachus used this. 
+    3 - Parmula or Parma;
     description_offset:0 0.5 0;
     desc_arrow_position:down;
     label_text:Shield;" circles-pickup-networked></a-entity>
 
     <a-entity id="paintingObj" position="41.4 4.375 3.93" rotation="0 -70 0" scale="0.5 0.5 0.5" gltf-model="#painting" shadow="cast:true; recieve:true;" circles-artefact="inspectPosition:0 0 0; inspectRotation:0 0 0; inspectScale:0.1 0.1 0.1; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset: 0 1.0 0.5; label_arrow_position:down;
-    title:painting;
-    description:cool painting alisha spent like 5 hours on;
-    title_back:[~20-25 chars] Title Back;
-    description_back:[~240-280 chars] This is the back/secondary text that will display when you rotate the description bubble.;
+    title:History of Constantine;
+    description:This tapestry series illustrates key moments in the life of Emperor Constantine, whose reign in the early 4th century marked a pivotal era for Rome. During this time, the Colosseum was at the height of its grandeur, hosting gladiatorial games and public spectacles that celebrated Rome’s imperial might.;
+    title_back:History of Constantine;
+    description_back:While the tapestries focus on Constantine’s military and religious milestones, they reflect the broader cultural and architectural achievements of ancient Rome, a city where power, spectacle, and public entertainment were integral to its identity. Original By Peter Paul Rubens, early 17th century; 
     description_offset:0 0.5 0;
     desc_arrow_position:down;
     label_text:Painting;" circles-pickup-networked></a-entity>

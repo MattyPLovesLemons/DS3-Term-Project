@@ -12,13 +12,18 @@
   <circles-start-ui/>
 
   <!-- a-scene with 'circles-properties' component [REQUIRED] -->
-  <a-scene circles_scene_properties fog="type: none">
+  <a-scene circles_scene_properties fog="type: none" shadow="type: none">
     <a-assets>
 
       <!--models-->
-      <a-asset-item id="startarea" src="assets/models/startarea.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
-      <a-asset-item id="navmesh_coloera1" src="assets/models/coloera1Nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
-      <a-asset-item id="detailObjects" src="assets/models/extraDetails.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="startarea" src="assets/models/tutBUILD.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="navmesh" src="assets/models/tutNAV2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="detailObjects" src="assets/models/tutOBJ.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+      <a-asset-item id="cage" src="assets/models/tutCAGE2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="wheel" src="assets/models/tutWHEEL2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+      <a-asset-item id="box" src="assets/models/tutBOXXX.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
       <!--artifacts-->
       <a-asset-item id="cuff" src="assets/models/cuffObj.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
@@ -37,24 +42,71 @@
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
 
-    <!-- new world -->
+    <a-entity circles-checkpoint circles-spawnpoint position="0 0.05 0"></a-entity> <!-- old 10 , 0.05, 32-->
+
+
+    <!-- new world -->s
     <a-entity id="link-col"
-                position="0 1 -25" rotation="0 -90 0" scale="1 1 1"
-                circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Colosseum ; link_url:/w/Colosseum"
+                position="0 1 -42" rotation="0 -90 0" scale="1 1 1"
+                circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Era 1 - Ancient Rome ; link_url:/w/Colosseum"
                 shadow></a-entity>
 
     <!-- start your code: put your A-frame, Circles XR, and custom components here -->
 
-    <!--environment-->
-    <a-entity id="startarea" position="3 -2 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#startarea" shadow="cast:true; recieve:true;"></a-entity>
+    <!-- telepads -->
+    <a-entity circles-checkpoint position="0 0.0 -10"></a-entity>
+    <a-entity circles-checkpoint position="0 0.0 -20"></a-entity>
+    <a-entity circles-checkpoint position="0 0.0 -30"></a-entity>
+    <a-entity circles-checkpoint position="0 0.0 -40"></a-entity>
+    
+   
 
+    <a-entity circles-checkpoint position="-5 0.0 -20.3"></a-entity>
+    <a-entity circles-checkpoint position="5 0.0 -40"></a-entity>
+
+
+    <!-- text -->s
+    <a-entity id="Title" position="-1.5 2.2 -5" rotation="0 25 0" text="value: Welcome to the Colosseum: A Journey Through Time; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+
+    <a-entity id="text1" position="-1.5 1.3 -5" rotation="0 25 0" text="value: Step into the heart of Rome and experience the Colosseum like never before. Our immersive gallery takes you on a journey through three defining eras of this iconic monument’s history.; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+    <a-entity id="text2" position="-1.5 0.7 -5" rotation="0 25 0" text="value: Begin your journey through time and explore the evolution of one of history’s most iconic landmarks.; color: #FFFFFF; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+
+    <a-entity id="Title" position="1.6 2 -20" rotation="0 -25 0" text="value: Where are we?; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="1.6 1.3 -20" rotation="0 -25 0" text="value: We are currently underneath the arena in roman times, here slaves would keep the arena functional, power elevators, and take care of imported animals to be used in battles and hunts.; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+
+
+    <a-entity id="Title" position="-1.7 2 -24" rotation="0 25 0" text="value:Pick Up and Learn; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+    <a-entity id="text1" position="-1.7 1.3 -24" rotation="0 25 0" text="value: Interact with objects that have a label over them to move them around and read about what they are.; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+
+
+    <!--environment-->
+    <a-entity id="startarea" position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#startarea" shadow="cast:false; recieve:false;"></a-entity>
+
+    <a-entity id="colera1Nav"  position="0 -0 0" scale="0.5 0.5 0.5" gltf-model="#navmesh" visible='false' nav-mesh></a-entity>
+
+    <a-entity id="objects" position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#detailObjects" shadow="cast:false; recieve:true;"></a-entity>
+
+    <a-entity id="objectsb" position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#box" shadow="cast:false; recieve:true;"></a-entity>
+    
+    <a-entity id="wheelO" position="-8 0.5 -19" rotation="45.3 120s.5 39.2" scale="0.5 0.5 0.5" gltf-model="#wheel" shadow="cast:false; recieve:false;" circles-artefact="inspectPosition:0 0 0; inspectRotation:0 0 0; inspectScale:0.4 0.4 0.4; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+    title:Wheel;
+    description: Was pushed by slaves in a circular motion around it to power the elevators. Elevators here were used to bring animals and people up to the arena.
+    In total there were 28 lifts under the colosseum. These man-powered elevators could carry over 600lbs.; label_text: Elevator Wheel;" circles-pickup-networked></a-entity>
+
+    <a-entity id="cageO" position="9.5 1.15 -40.5" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#cage" shadow="cast:true; recieve:false;" circles-artefact="inspectPosition:0 0 0; inspectRotation:0 90 0; inspectScale:0.2 0.2 0.2; textRotationY=90.0; labelLookAt:true; descriptionLookAt:true; label_offset:0.0 1.0 0.0; label_arrow_position:down;
+    title:Animal Cage;
+    description: This is a cage that would of transported animals from foreign lands to be hunted in the arena.
+    Many exotic animals were brough like bears, lions, tigers, boars, and crocodiles. 
+    Some are now extinct such as the Atlas bear and the Auroch bulls.; label_text:Animal Cage;" circles-pickup-networked></a-entity>
+    
     
 
     <a-entity id="sky" geometry="primitive:sphere; radius:150.0;"  material="src:#skyMap; shader:flat; flatShading:true; side:back;"></a-entity>
 
 
     <!--objects-->
-    
+    <a-light type="directional" intensity="1"></a-light>
+    <a-entity light="type: ambient; color: #dec07a" intensity="0.3"></a-entity>
 
 
     <!--
