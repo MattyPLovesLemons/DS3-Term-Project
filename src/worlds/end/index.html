@@ -1,0 +1,107 @@
+<html>
+<head>
+  <!-- Circles' head scripts [REQUIRED] -->
+  <circles-start-scripts/>
+
+  <!--other scripts-->
+  <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+
+</head>
+<body>
+  <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
+  <circles-start-ui/>
+
+  <!-- a-scene with 'circles-properties' component [REQUIRED] -->
+  <a-scene circles_scene_properties fog="type: none" shadow="type: none">
+    <a-assets>
+
+      <!--models-->
+      <a-asset-item id="startarea" src="assets/models/endBUILD2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-sset-item>
+      <a-asset-item id="navmesh" src="assets/models/endNav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="detailObjects" src="assets/models/tutOBJ2.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+
+      <!--artifacts-->
+     
+
+
+      <!-- HDRI -->
+      <img id='skyMap' src='assets/textures/hdri1.jpg' crossorigin="anonymous">
+
+      <!-- Circles' built-in assets [REQUIRED] -->
+      <circles-assets/>
+    </a-assets>
+
+    <!-- Circles' built-in manager and avatar [REQUIRED] -->
+    <circles-manager-avatar/>
+
+    <a-entity circles-checkpoint circles-spawnpoint position="0 0.05 0"></a-entity> <!-- old 10 , 0.05, 32-->
+
+
+    <!-- new world -->
+    <a-entity id="link-col"
+                position="3 1 -4" rotation="0 -90 0" scale="1 1 1"
+                circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Era 2 - Medivial Area ; link_url:/w/Colosseum Era 2"
+                shadow></a-entity>
+    <a-entity id="link-col"
+                position="7 1 -4" rotation="0 -90 0" scale="1 1 1"
+                circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Era 3 - Modern Times ; link_url:/w/Colosseum Era 3"
+                shadow></a-entity>
+    <a-entity id="link-col"
+                position="-3 1 -4" rotation="0 -90 0" scale="1 1 1"
+                circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Era 1- Ancient Rome ; link_url:/w/Colosseum"
+                shadow></a-entity>
+    <a-entity id="link-col"
+                position="-7 1 -4" rotation="0 -90 0" scale="1 1 1"
+                circles-portal="img_src:/global/assets/textures/equirectangular/WhiteBlue.jpg; title_text:Starting Area ; link_url:/w/startArea"
+                shadow></a-entity>
+
+    <!-- start your code: put your A-frame, Circles XR, and custom components here -->
+
+    <!-- telepads -->
+    <a-entity circles-checkpoint position="2 0.05 0"></a-entity>
+    <a-entity circles-checkpoint position="-2 0.05 0"></a-entity>
+    
+    
+   
+
+    <a-entity circles-checkpoint position="-5 0.0 -20.3"></a-entity>
+    <a-entity circles-checkpoint position="5 0.0 -40"></a-entity>
+
+
+    <!-- text -->
+    <a-entity id="Title" position="0 2.2 -4" rotation="0 0 0" text="value: The End; color: #FFFFFF; width: 1.7; wrapCount: 30; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/BebasNeue-Regular-msdf.json; negate: false; lineHeight: 60" scale="2 2 2"></a-entity>
+
+    <a-entity id="text1" position="0 1.3 -4" rotation="0 0 0" text="value: From here you can go back to any of the eras.; width: 1.7; wrapCount: 41.46; align: center; tabSize: 4.43; font: /worlds/startarea/assets/font/Nunito-Bold-msdf.json; negate: false; lineHeight: 70" scale="1.6 1.6 1.6"></a-entity>
+    
+
+    <!--environment-->
+    <a-entity id="startarea" position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#startarea" shadow="cast:false; recieve:false;"></a-entity>
+
+    <a-entity id="colera1Nav"  position="0 -0.5 0" scale="0.5 0.5 0.5" gltf-model="#navmesh" visible='false' nav-mesh></a-entity>
+
+    <a-entity id="objects" position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#detailObjects" shadow="cast:false; recieve:true;"></a-entity>
+
+    
+    
+    
+
+    <a-entity id="sky" geometry="primitive:sphere; radius:150.0;"  material="src:#skyMap; shader:flat; flatShading:true; side:back;"></a-entity>
+
+
+    <!--objects-->
+    <a-light type="directional" intensity="1"></a-light>
+    <a-entity light="type: ambient; color: #dec07a" intensity="0.5"></a-entity>
+
+
+    <!--
+    <a-entity environment="preset:default;"></a-entity>
+    <a-entity environment="preset: default; fog: 0"></a-entity>
+    -->
+    <!-- end your code: -->
+  </a-scene>
+
+  <!-- Circles' end scripts [REQUIRED] -->
+  <circles-end-scripts/>
+ </body>
+</html>
